@@ -1,0 +1,16 @@
+{
+    "license": "YFZ-22846",
+    "businessname": "Another Store June70",
+    "ownerfirstname":    "AirstName",
+    "ownerlastname":    "LastName",
+    "phone":     "511-408-9903",
+    "email":     "test2@test.com",
+    "address": {
+    	"street": "12609 Dessau Rd",
+    	"secondary": "LOT 485",
+    	"city": "austin",
+    	"state": "texas",
+    	"zipCode": "78727"
+    },
+    "lastinspectiondate":"2019-01-01"
+}

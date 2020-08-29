@@ -1,0 +1,94 @@
+[
+    {
+        "TestDescription": "Create New Strain Successfully via POST",
+        "RequestMethod": "POST",
+        "Request": {
+            "buslicenseid": "5f4191a86d3f52164401acbc",
+            "name": "Record Name 1",
+            "percentage1": 35.47,
+            "percentage2": 64.53
+        },
+        "ReturnStatus": 201
+    },
+    {
+        "TestDescription": "Get New Strain Successfully",
+        "RequestMethod": "GET",
+        "Request": {
+            "buslicenseid": "5f4191a86d3f52164401acbc",
+            "name": "Record Name 1"
+        },
+        "ReturnStatus": 200
+    },
+    {
+        "TestDescription": "Update New Strain Successfully via PUT",
+        "RequestMethod": "PUT",
+        "Request": {
+            "buslicenseid": "5f4191a86d3f52164401acbc",
+            "name": "Record Name 1",
+            "update": {
+                "name": "OG Kush57",
+                "percentage1":41.95,
+                "percentage2":58.05
+            }
+        },
+        "ReturnStatus": 200
+    },
+    {
+        "TestDescription": "Delete New Strain Successfully",
+        "RequestMethod": "DELETE",
+        "Request": {
+            "buslicenseid": "5f4191a86d3f52164401acbc",
+            "name": "OG Kush57"
+        },
+        "ReturnStatus": 204
+    },
+    {
+        "TestDescription": "Attempt to create record with Invalid Business License",
+        "TestGroupName": "Invalid Requests Test Group 1",
+        "RequestMethod": "POST",
+        "Request": {
+            "buslicenseid": "5ddf306306f4e610f0db99a7",
+            "name": "Record Name 1",
+            "percentage1": 35.47,
+            "percentage2": 64.53
+        },
+        "ReturnStatus": 400,
+        "ResponseText": "Invalid Business"
+    },
+    {
+        "TestDescription": "Attempt to create record with No Name",
+        "TestGroupName": "Invalid Requests Test Group 1",
+        "RequestMethod": "POST",
+        "Request": {
+            "buslicenseid": "5f4191a86d3f52164401acbc",
+            "percentage1": 35.47,
+            "percentage2": 64.53
+        },
+        "ReturnStatus": 400,
+        "ResponseText": "Strain name required"
+    },
+    {
+        "TestDescription": "Attempt to create record with No Percentage1",
+        "TestGroupName": "Invalid Requests Test Group 1",
+        "RequestMethod": "POST",
+        "Request": {
+            "buslicenseid": "5f4191a86d3f52164401acbc",
+            "name": "Record Name 1",
+            "percentage2": 64.53
+        },
+        "ReturnStatus": 400,
+        "ResponseText": "No Percentage1"
+    },
+    {
+        "TestDescription": "Attempt to create record with No Percentage2",
+        "TestGroupName": "Invalid Requests Test Group 1",
+        "RequestMethod": "POST",
+        "Request": {
+            "buslicenseid": "5f4191a86d3f52164401acbc",
+            "name": "Record Name 1",
+            "percentage1": 64.53
+        },
+        "ReturnStatus": 400,
+        "ResponseText": "No Percentage2"
+    }
+]

@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "e6de0aa1-c105-4ffd-8f94-0b053a02df34",
+		"name": "Code Sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Business Licenses",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0c78fe35-8f41-4644-8f10-084270550b83",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cf821d25-342e-4bb7-9f4d-d1200953b95c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "{{M_VAR}}",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{envInputJSONdata}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{accessURL}}/BusinessLicense",
+					"host": [
+						"{{accessURL}}"
+					],
+					"path": [
+						"BusinessLicense"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "009f771e-d2bd-4565-bbb2-4f5823082d91",
+				"type": "text/javascript",
+				"exec": [
+					"var inputJSONdata = pm.iterationData.get(\"Request\");",
+					"pm.environment.set('envInputJSONdata',JSON.stringify(inputJSONdata));",
+					"if(data.RequestMethod !== undefined){",
+					"    pm.environment.set('M_VAR',data.RequestMethod);",
+					"}",
+					"//console.log(data.TestDescription);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "99fb05ab-bf0e-4ba3-bd96-14b03ebf6096",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(data.TestDescription + \" - Test 1 - Expected Status Code Returned\", () => {",
+					"  pm.expect(pm.response.code).to.eql(data.ReturnStatus);",
+					"});",
+					"",
+					"pm.test(data.TestDescription + \" - Test 2 - Response time in line with expectations\", () => {",
+					"  pm.expect(pm.response.responseTime).to.be.below(500);",
+					"});",
+					"",
+					"if (data.ResponseText !== undefined){",
+					"  pm.test(data.TestDescription + \" - Test 3 - Received Expected Response Body\",() => {",
+					"  pm.expect(pm.response.text()).to.include(data.ResponseText);",
+					"  });",
+					"  }",
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,42 @@
+{
+    "_id":{
+        "$oid":"5f4191a86d3f52164401acbc"
+    }
+    ,"license":"NAH-90211"
+    ,"businessname":"PERSISTANT TEST STORE"
+    ,"ownerfirstname":"NICK"
+    ,"ownerlastname":"HENDRICK"
+    ,"phone":"856-309-4303"
+    ,"email":"TEST2@TEST.COM"
+    ,"address":{
+        "streetnum":"6263"
+        ,"streetName":"McNeil"
+        ,"streetSuffix":"Dr"
+        ,"secondaryNumber":"1216"
+        ,"secondaryDesignator":"Apt"
+        ,"cityName":"Austin"
+        ,"state":"TX"
+        ,"zipCode":"78729"
+        ,"plus4Code":"7586"
+        ,"latitude":{
+            "$numberDouble":"30.44038"
+        }
+        ,"longitude":{
+            "$numberDouble":"-97.74714"
+        }
+    }
+    ,"lastinspectiondate":"2020-01-01"
+    ,"createdAt":{
+        "$date":{
+            "$numberLong":"1598132648857"
+            }
+        }
+    ,"updatedAt":{
+        "$date":{
+            "$numberLong":"1598132648857"
+            }
+    }
+    ,"__v":{
+        "$numberInt":"0"
+    }
+}
