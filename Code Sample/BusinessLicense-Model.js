@@ -35,7 +35,7 @@ let BusinessSchema = new mongoose.Schema({
     validate: (value) => {
       return validator.isAlpha(value);
     },
-    required: [true, 'Owner first name required']
+    required: [true, 'Owner last name required']
   },
   phone: {
     type: String,
