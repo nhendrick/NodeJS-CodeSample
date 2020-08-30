@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
     try {
         // * Map Common Key
         const SearchKey   = req.body.license;     
-        const SearchData = {
+        var SearchData = {
             license:   SearchKey,
         };  
     } catch (error) {
